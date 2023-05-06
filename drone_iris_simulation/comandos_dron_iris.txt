@@ -1,0 +1,12 @@
+**Terminal 1
+gazebo --verbose worlds/iris.world
+
+
+**Terminal 2
+cd ~/drone_iris_simulation/ardupilot/ArduCopter
+../Tools/autotest/sim_vehicle.py -f gazebo-iris -m --mav10 --console -I0
+
+
+**Terminal 3
+cd ~/catkin_ws/src/launch
+roslaunch apm.launch 

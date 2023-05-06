@@ -1,0 +1,18 @@
+<launch>
+  <!-- Argumentos -->
+  <arg name="gui" default="true" />
+  <arg name="world" default="/home/jaime/drone_iris_simulation/ardupilot_gazebo/worlds/iris.world" />
+  
+  <!-- Inicia Gazebo con un mundo específico -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world)" />
+    <arg name="paused" value="false" />
+    <arg name="use_sim_time" value="true" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="headless" value="false" />
+    <arg name="debug" value="false" />
+  </include>
+  
+  <!-- Configurar y lanzar el nodo de la cámara -->
+  <node name="camera_node" pkg="image_transport" type="republish" args="raw in:=/ardupilot/camera/image_raw out:=/mavros/camera_info" />
+</launch>
