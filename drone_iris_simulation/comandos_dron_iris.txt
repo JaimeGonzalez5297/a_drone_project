@@ -3,7 +3,7 @@ gazebo --verbose worlds/iris.world
 
 
 **Terminal 2
-cd ~/drone_iris_simulation/ardupilot/ArduCopter
+cd ~/a_drone_project/drone_iris_simulation/ardupilot/ArduCopter
 ../Tools/autotest/sim_vehicle.py -f gazebo-iris -m --mav10 --console -I0
 
 
