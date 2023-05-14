@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/jaime/a_drone_project/catkin_ws/devel/setup.sh
+    local-name: /home/dronespsi/a_drone_project/catkin_ws/devel/setup.sh

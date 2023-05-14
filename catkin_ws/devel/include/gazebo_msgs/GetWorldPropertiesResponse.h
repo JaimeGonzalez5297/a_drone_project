@@ -172,7 +172,7 @@ struct Definition< ::gazebo_msgs::GetWorldPropertiesResponse_<ContainerAllocator
   {
     return "float64 sim_time                     # current sim time\n"
 "string[] model_names                 # list of models in the world\n"
-"bool rendering_enabled               # if X is used\n"
+"bool rendering_enabled               # If gazebo rendering engine is enabled, currently always True\n"
 "bool success                         # return true if get successful\n"
 "string status_message                # comments if available\n"
 "\n"

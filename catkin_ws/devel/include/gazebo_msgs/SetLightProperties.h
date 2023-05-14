@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::gazebo_msgs::SetLightProperties > {
   static const char* value()
   {
-    return "e6f13430c57278bb364aca53a1bf5ebf";
+    return "cd58c48ac21e5165abf13bcaa9c079b4";
   }
 
   static const char* value(const ::gazebo_msgs::SetLightProperties&) { return value(); }

@@ -16,9 +16,6 @@
 #include <ros/message_operations.h>
 
 #include <std_msgs/ColorRGBA.h>
-#include <std_msgs/ColorRGBA.h>
-#include <geometry_msgs/Vector3.h>
-#include <geometry_msgs/Pose.h>
 
 namespace gazebo_msgs
 {
@@ -29,25 +26,17 @@ struct SetLightPropertiesRequest_
 
   SetLightPropertiesRequest_()
     : light_name()
-    , cast_shadows(false)
     , diffuse()
-    , specular()
     , attenuation_constant(0.0)
     , attenuation_linear(0.0)
-    , attenuation_quadratic(0.0)
-    , direction()
-    , pose()  {
+    , attenuation_quadratic(0.0)  {
     }
   SetLightPropertiesRequest_(const ContainerAllocator& _alloc)
     : light_name(_alloc)
-    , cast_shadows(false)
     , diffuse(_alloc)
-    , specular(_alloc)
     , attenuation_constant(0.0)
     , attenuation_linear(0.0)
-    , attenuation_quadratic(0.0)
-    , direction(_alloc)
-    , pose(_alloc)  {
+    , attenuation_quadratic(0.0)  {
   (void)_alloc;
     }
 
@@ -56,14 +45,8 @@ struct SetLightPropertiesRequest_
    typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _light_name_type;
   _light_name_type light_name;
 
-   typedef uint8_t _cast_shadows_type;
-  _cast_shadows_type cast_shadows;
-
    typedef  ::std_msgs::ColorRGBA_<ContainerAllocator>  _diffuse_type;
   _diffuse_type diffuse;
-
-   typedef  ::std_msgs::ColorRGBA_<ContainerAllocator>  _specular_type;
-  _specular_type specular;
 
    typedef double _attenuation_constant_type;
   _attenuation_constant_type attenuation_constant;
@@ -73,12 +56,6 @@ struct SetLightPropertiesRequest_
 
    typedef double _attenuation_quadratic_type;
   _attenuation_quadratic_type attenuation_quadratic;
-
-   typedef  ::geometry_msgs::Vector3_<ContainerAllocator>  _direction_type;
-  _direction_type direction;
-
-   typedef  ::geometry_msgs::Pose_<ContainerAllocator>  _pose_type;
-  _pose_type pose;
 
 
 
@@ -110,14 +87,10 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::gazebo_msgs::SetLightPropertiesRequest_<ContainerAllocator1> & lhs, const ::gazebo_msgs::SetLightPropertiesRequest_<ContainerAllocator2> & rhs)
 {
   return lhs.light_name == rhs.light_name &&
-    lhs.cast_shadows == rhs.cast_shadows &&
     lhs.diffuse == rhs.diffuse &&
-    lhs.specular == rhs.specular &&
     lhs.attenuation_constant == rhs.attenuation_constant &&
     lhs.attenuation_linear == rhs.attenuation_linear &&
-    lhs.attenuation_quadratic == rhs.attenuation_quadratic &&
-    lhs.direction == rhs.direction &&
-    lhs.pose == rhs.pose;
+    lhs.attenuation_quadratic == rhs.attenuation_quadratic;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -174,12 +147,12 @@ struct MD5Sum< ::gazebo_msgs::SetLightPropertiesRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "10d953f2306aec18460eb80dd94fdd47";
+    return "73ad1ac5e9e312ddf7c74f38ad843f34";
   }
 
   static const char* value(const ::gazebo_msgs::SetLightPropertiesRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x10d953f2306aec18ULL;
-  static const uint64_t static_value2 = 0x460eb80dd94fdd47ULL;
+  static const uint64_t static_value1 = 0x73ad1ac5e9e312ddULL;
+  static const uint64_t static_value2 = 0xf7c74f38ad843f34ULL;
 };
 
 template<class ContainerAllocator>
@@ -199,14 +172,10 @@ struct Definition< ::gazebo_msgs::SetLightPropertiesRequest_<ContainerAllocator>
   static const char* value()
   {
     return "string light_name                    # name of Gazebo Light\n"
-"bool cast_shadows\n"
 "std_msgs/ColorRGBA diffuse           # diffuse color as red, green, blue, alpha\n"
-"std_msgs/ColorRGBA specular          # specular color as red, green, blue, alpha\n"
 "float64 attenuation_constant\n"
 "float64 attenuation_linear\n"
 "float64 attenuation_quadratic\n"
-"geometry_msgs/Vector3 direction\n"
-"geometry_msgs/Pose pose              # pose in world frame\n"
 "\n"
 "================================================================================\n"
 "MSG: std_msgs/ColorRGBA\n"
@@ -214,40 +183,6 @@ struct Definition< ::gazebo_msgs::SetLightPropertiesRequest_<ContainerAllocator>
 "float32 g\n"
 "float32 b\n"
 "float32 a\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Vector3\n"
-"# This represents a vector in free space. \n"
-"# It is only meant to represent a direction. Therefore, it does not\n"
-"# make sense to apply a translation to it (e.g., when applying a \n"
-"# generic rigid transformation to a Vector3, tf2 will only apply the\n"
-"# rotation). If you want your data to be translatable too, use the\n"
-"# geometry_msgs/Point message instead.\n"
-"\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Pose\n"
-"# A representation of pose in free space, composed of position and orientation. \n"
-"Point position\n"
-"Quaternion orientation\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Point\n"
-"# This contains the position of a point in free space\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Quaternion\n"
-"# This represents an orientation in free space in quaternion form.\n"
-"\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"float64 w\n"
 ;
   }
 
@@ -267,14 +202,10 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.light_name);
-      stream.next(m.cast_shadows);
       stream.next(m.diffuse);
-      stream.next(m.specular);
       stream.next(m.attenuation_constant);
       stream.next(m.attenuation_linear);
       stream.next(m.attenuation_quadratic);
-      stream.next(m.direction);
-      stream.next(m.pose);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -295,26 +226,15 @@ struct Printer< ::gazebo_msgs::SetLightPropertiesRequest_<ContainerAllocator> >
   {
     s << indent << "light_name: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.light_name);
-    s << indent << "cast_shadows: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.cast_shadows);
     s << indent << "diffuse: ";
     s << std::endl;
     Printer< ::std_msgs::ColorRGBA_<ContainerAllocator> >::stream(s, indent + "  ", v.diffuse);
-    s << indent << "specular: ";
-    s << std::endl;
-    Printer< ::std_msgs::ColorRGBA_<ContainerAllocator> >::stream(s, indent + "  ", v.specular);
     s << indent << "attenuation_constant: ";
     Printer<double>::stream(s, indent + "  ", v.attenuation_constant);
     s << indent << "attenuation_linear: ";
     Printer<double>::stream(s, indent + "  ", v.attenuation_linear);
     s << indent << "attenuation_quadratic: ";
     Printer<double>::stream(s, indent + "  ", v.attenuation_quadratic);
-    s << indent << "direction: ";
-    s << std::endl;
-    Printer< ::geometry_msgs::Vector3_<ContainerAllocator> >::stream(s, indent + "  ", v.direction);
-    s << indent << "pose: ";
-    s << std::endl;
-    Printer< ::geometry_msgs::Pose_<ContainerAllocator> >::stream(s, indent + "  ", v.pose);
   }
 };
 

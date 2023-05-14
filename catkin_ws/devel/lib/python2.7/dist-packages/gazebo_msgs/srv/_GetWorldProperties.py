@@ -106,7 +106,7 @@ class GetWorldPropertiesResponse(genpy.Message):
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """float64 sim_time                     # current sim time
 string[] model_names                 # list of models in the world
-bool rendering_enabled               # if X is used
+bool rendering_enabled               # If gazebo rendering engine is enabled, currently always True
 bool success                         # return true if get successful
 string status_message                # comments if available
 

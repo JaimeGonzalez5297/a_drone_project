@@ -1,7 +1,7 @@
 <launch>
   <!-- Argumentos -->
   <arg name="gui" default="true" />
-  <arg name="world" default="/home/jaime/a_drone_project/drone_iris_simulation/ardupilot_gazebo/worlds/iris.world" />
+  <arg name="world" default="/home/dronespsi/a_drone_project/drone_iris_simulation/ardupilot_gazebo/worlds/iris.world" />
   
   <!-- Inicia Gazebo con un mundo específico -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
