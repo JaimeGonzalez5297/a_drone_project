@@ -1,4 +1,5 @@
-.pyc
-build
-Interfaz
+*.pyc
+**/build/
+**/Interfaz/
+**/devel/
 **/gazebo_ros_pkgs
