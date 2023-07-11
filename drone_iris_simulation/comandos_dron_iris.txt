@@ -1,4 +1,7 @@
 **Terminal 1
+cd ~/a_drone_project/catkin_ws/src/master_drones_pkgs/launch
+roslaunch run_world.launch 
+
 gazebo --verbose worlds/iris.world
 
 
@@ -10,3 +13,9 @@ cd ~/a_drone_project/drone_iris_simulation/ardupilot/ArduCopter
 **Terminal 3
 cd ~/catkin_ws/src/launch
 roslaunch apm.launch 
+
+cd ~/a_drone_project/catkin_ws/src/master_drones_pkgs/launch
+roslaunch apm.launch fcu_url:=udp://127.0.0.1:14551@14555 mavros_ns:=/drone1 tgt_system:=1
+
+cd ~/a_drone_project/catkin_ws/src/master_drones_pkgs/launch
+roslaunch multi_uav.launch

@@ -117,5 +117,10 @@
       <static>1</static>
       <pose frame=''>0 0 0 0 -0 0</pose>
     </model>
+     <model name="iris_with_standoffs">
+      <include>
+        <uri>model://iris_with_standoffs</uri>
+      </include>
+    </model>
   </world>
 </sdf>
