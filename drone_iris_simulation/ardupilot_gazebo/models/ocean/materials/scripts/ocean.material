@@ -15,28 +15,6 @@ material Seabox
   }
 }
 
-material Sand
-{
-  receive_shadows off
-  technique
-  {
-    pass
-    {
-      ambient 0.5 0.5 0.5 1.0
-      diffuse 0.5 0.5 0.5 1.0
-      specular 0.2 0.2 0.2 1.0 12.5
-
-      texture_unit
-      {
-        texture soil_sand_0045_01.jpg
-        filtering anistropic
-        max_anisotropy 16
-        scale 0.5 0.5
-      }
-    }
-  }
-}
-
 vertex_program GLSL/WavesVS glsl
 {
   source ../programs/GLSL/Waves.vert
@@ -62,7 +40,7 @@ material Waves_GLSL
         param_named bumpScale float2 25 25
         param_named bumpSpeed float2 0.01 0.01
         param_named frequency float 0.028
-        param_named amplitude float 0.7
+        param_named amplitude float 0.1
         param_named steepness float 1.0
       }
 
