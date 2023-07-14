@@ -107,13 +107,13 @@
     </model>
       <model name="drone1">
         <include>
-          <uri>model://drone1</uri>
+          <uri>model://drone_with_camera</uri>
         </include>
         <pose> 2 0 0 0 0 0</pose>
     </model>
     <model name="drone2">
         <include>
-          <uri>model://drone2</uri>
+          <uri>model://drone_with_camera</uri>
         </include>
         <pose> 0 0 0 0 0 0</pose>
     </model>
