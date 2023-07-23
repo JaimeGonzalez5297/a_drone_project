@@ -2,7 +2,7 @@
   <!-- No namespace here as we will share this description. 
        Access with slash at the beginning -->
     <!-- BEGIN MAVROS NODE 1-->
-    <group ns="drone1">
+    <group ns="dron1">
         <arg name="fcu_url" default="udp://127.0.0.1:14551@14555" />
         <arg name="gcs_url" default="" />
         <arg name="tgt_system" default="1" />
@@ -24,6 +24,8 @@
             <arg name="fcu_protocol" value="$(arg fcu_protocol)" />
             <arg name="respawn_mavros" value="$(arg respawn_mavros)" />
         </include>
+
+        <node name="camera_node" pkg="image_transport" type="republish" args="raw in:=/ardupilot/camera/image_raw out:=/mavros/camera_info" />
     </group>
 
     <!-- BEGIN MAVROS NODE 2-->
