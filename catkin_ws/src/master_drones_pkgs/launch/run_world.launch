@@ -1,7 +1,7 @@
 <launch>
   <!-- Argumentos -->
   <arg name="gui" default="true" />
-  <arg name="world" default="worlds/iris.world" />
+  <arg name="world" default="worlds/MultiCopter.world" />
   
   <!-- Inicia Gazebo con un mundo específico -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -13,6 +13,4 @@
     <arg name="debug" value="false" />
   </include>
   
-  <!-- Configurar y lanzar el nodo de la cámara -->
-  <node name="camera_node" pkg="image_transport" type="republish" args="raw in:=/ardupilot/camera/image_raw out:=/mavros/camera_info" />
 </launch>
