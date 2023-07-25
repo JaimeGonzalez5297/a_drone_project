@@ -107,16 +107,16 @@
     </model>
       <model name="drone1">
         <include>
-          <uri>model://drone_with_camera</uri>
-        </include>
-        <pose> 2 0 0 0 0 0</pose>
-    </model>
-    <model name="drone2">
-        <include>
-          <uri>model://drone_with_camera</uri>
+          <uri>model://drone1</uri>
         </include>
         <pose> 0 0 0 0 0 0</pose>
     </model>
+    <!-- <model name="drone2">
+        <include>
+          <uri>model://drone2</uri>
+        </include>
+        <pose> 0 0 0 0 0 0</pose>
+    </model> -->
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
     <scene>
