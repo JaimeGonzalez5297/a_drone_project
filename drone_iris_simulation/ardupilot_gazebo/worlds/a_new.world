@@ -74,7 +74,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
+              <name>Gazebo/Pedestrian</name>
             </script>
           </material>
         </visual>
@@ -1633,7 +1633,7 @@
         <visual name='main_Visual'>
           <geometry>
             <box>
-              <size>40 40 0.01</size>
+              <size>1 1 0.01</size>
             </box>
           </geometry>
           <material>
