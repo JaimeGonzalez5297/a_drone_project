@@ -3,16 +3,20 @@ gazebo --verbose worlds/iris.world
 
 
 **Terminal 2
-Dron 1
 
+Dron 1
 cd ~/a_drone_project/drone_iris_simulation/ardupilot/ArduCopter
 ../Tools/autotest/sim_vehicle.py -f gazebo-dron1 -m --mav10 --console -I0 --custom-location=3.371387,-76.533004,584,122
 
 **Terminal 3
-Dron 2
 
+Dron 2
 cd ~/a_drone_project/drone_iris_simulation/ardupilot/ArduCopter
 ../Tools/autotest/sim_vehicle.py -f gazebo-dron2 -m --mav10 --console -I1 --custom-location=3.371387,-76.533004,584,122
+
+Dron 3
+cd ~/a_drone_project/drone_iris_simulation/ardupilot/ArduCopter
+../Tools/autotest/sim_vehicle.py -f gazebo-dron3 -m --mav10 --console -I2 --custom-location=3.371387,-76.533004,584,122
 
 **Terminal 4
 cd ~/catkin_ws/src/launch
