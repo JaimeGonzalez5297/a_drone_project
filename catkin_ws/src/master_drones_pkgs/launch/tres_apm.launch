@@ -1,0 +1,80 @@
+<launch>
+  <!-- No namespace here as we will share this description. 
+       Access with slash at the beginning -->
+    <!-- BEGIN MAVROS NODE 1-->
+    <group ns="dron1">
+        <arg name="fcu_url" default="udp://127.0.0.1:14551@14555" />
+        <arg name="gcs_url" default="" />
+        <arg name="tgt_system" default="1" />
+        <arg name="tgt_component" default="1" />
+        <arg name="log_output" default="screen" />
+        <arg name="fcu_protocol" default="v2.0" />
+        <arg name="respawn_mavros" default="false" />
+        <arg name="mavros_ns" default="/mavros1"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find mavros)/launch/apm_pluginlists.yaml" />
+            <arg name="config_yaml" value="$(find mavros)/launch/apm_config.yaml" />
+            <arg name="mavros_ns" value="$(arg mavros_ns)"/>
+            <arg name="fcu_url" value="$(arg fcu_url)" />
+            <arg name="gcs_url" value="$(arg gcs_url)" />
+            <arg name="tgt_system" value="$(arg tgt_system)" />
+            <arg name="tgt_component" value="$(arg tgt_component)" />
+            <arg name="log_output" value="$(arg log_output)" />
+            <arg name="fcu_protocol" value="$(arg fcu_protocol)" />
+            <arg name="respawn_mavros" value="$(arg respawn_mavros)" />
+        </include>
+
+        <node name="camera_node" pkg="image_transport" type="republish" args="raw in:=/ardupilot/camera/image_raw out:=/mavros/camera_info" />
+    </group>
+
+    <!-- BEGIN MAVROS NODE 2-->
+    <group ns="dron2">
+        <arg name="fcu_url" default="udp://127.0.0.1:14561@14565" />
+        <arg name="gcs_url" default="" />
+        <arg name="tgt_system" default="2" />
+        <arg name="tgt_component" default="1" />
+        <arg name="log_output" default="screen" />
+        <arg name="fcu_protocol" default="v2.0" />
+        <arg name="respawn_mavros" default="false" />
+        <arg name="mavros_ns" default="/mavros2"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find mavros)/launch/apm_pluginlists.yaml" />
+            <arg name="config_yaml" value="$(find mavros)/launch/apm_config.yaml" />
+            <arg name="mavros_ns" value="$(arg mavros_ns)"/>
+            <arg name="fcu_url" value="$(arg fcu_url)" />
+            <arg name="gcs_url" value="$(arg gcs_url)" />
+            <arg name="tgt_system" value="$(arg tgt_system)" />
+            <arg name="tgt_component" value="$(arg tgt_component)" />
+            <arg name="log_output" value="$(arg log_output)" />
+            <arg name="fcu_protocol" value="$(arg fcu_protocol)" />
+            <arg name="respawn_mavros" value="$(arg respawn_mavros)" />
+        </include>
+    </group>
+
+    <group ns="dron3">
+        <arg name="fcu_url" default="udp://127.0.0.1:14571@14575" />
+        <arg name="gcs_url" default="" />
+        <arg name="tgt_system" default="3" />
+        <arg name="tgt_component" default="1" />
+        <arg name="log_output" default="screen" />
+        <arg name="fcu_protocol" default="v2.0" />
+        <arg name="respawn_mavros" default="false" />
+        <arg name="mavros_ns" default="/mavros3"/>
+
+        <include file="$(find mavros)/launch/node.launch">
+            <arg name="pluginlists_yaml" value="$(find mavros)/launch/apm_pluginlists.yaml" />
+            <arg name="config_yaml" value="$(find mavros)/launch/apm_config.yaml" />
+            <arg name="mavros_ns" value="$(arg mavros_ns)"/>
+            <arg name="fcu_url" value="$(arg fcu_url)" />
+            <arg name="gcs_url" value="$(arg gcs_url)" />
+            <arg name="tgt_system" value="$(arg tgt_system)" />
+            <arg name="tgt_component" value="$(arg tgt_component)" />
+            <arg name="log_output" value="$(arg log_output)" />
+            <arg name="fcu_protocol" value="$(arg fcu_protocol)" />
+            <arg name="respawn_mavros" value="$(arg respawn_mavros)" />
+        </include>
+    </group>
+</launch>
+
