@@ -1,11 +1,11 @@
 <launch>
   <!-- Argumentos -->
   <arg name="gui" default="true" />
-  <arg name="world" default="worlds/tres_drones.world" />
+  <arg name="world" default="$(arg world)" />
   
   <!-- Inicia Gazebo con un mundo específico -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(arg world)" />
+    <arg name="world_name" value="worlds/$(arg world).world" />
     <arg name="paused" value="false" />
     <arg name="use_sim_time" value="true" />
     <arg name="gui" value="$(arg gui)" />
