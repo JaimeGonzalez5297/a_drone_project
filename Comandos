@@ -1,0 +1,19 @@
+New commands
+
+Terminal 1
+
+cd ~/a_drone_project/catkin_ws/src/master_drones_pkgs/launch
+roslaunch mundo.launch world:=cinco_drones
+
+
+Terminal 2
+
+cd ~/a_drone_project/drone_iris_simulation/ardupilot/ArduCopter
+python run_drones.py 5
+
+
+Terminal 3
+
+
+cd ~/a_drone_project/catkin_ws/src/master_drones_pkgs/launch
+python run_apm.py 5
