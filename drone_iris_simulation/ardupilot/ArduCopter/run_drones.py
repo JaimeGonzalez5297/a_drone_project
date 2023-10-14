@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 # Lanza un nodo mavros para cada drone
 for i in range(args.num_drones):
-    command ="../Tools/autotest/sim_vehicle.py -f gazebo-dron{} -m --mav10 --console -I{} --custom-location=3.371387,-76.533004,584,122".format(i+1,i)
+    command ="../Tools/autotest/sim_vehicle.py -f gazebo-dron{} -m --mav10 -I{} --custom-location=3.371387,-76.533004,584,122".format(i+1,i)
     print(command)
     process = subprocess.Popen(["gnome-terminal", "--", "bash", "-c", command])
     time.sleep(2)
